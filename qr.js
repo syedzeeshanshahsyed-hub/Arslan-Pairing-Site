@@ -8,7 +8,7 @@ const fs = require('fs');
 let router = express.Router()
 const pino = require("pino");
 const {
-	default: Arslan_Tech,
+	default: SHANII_Tech,
 	useMultiFileAuthState,
 	jidNormalizedUser,
 	Browsers,
@@ -28,13 +28,13 @@ const {
 } = require("node:fs/promises")
 router.get('/', async (req, res) => {
 	const id = makeid();
-	async function Arslan_MD_QR_CODE() {
+	async function SHANII_MD_QR_CODE() {
 		const {
 			state,
 			saveCreds
 		} = await useMultiFileAuthState('./temp/' + id)
 		try {
-			let Qr_Code_By_Arslan_Tech = Arslan_Tech({
+			let Qr_Code_By_SHANII_Tech = SHANI_Tech({
 				auth: state,
 				printQRInTerminal: false,
 				logger: pino({
@@ -43,8 +43,8 @@ router.get('/', async (req, res) => {
 				browser: Browsers.macOS("Desktop"),
 			});
 
-			Qr_Code_By_Arslan_Tech.ev.on('creds.update', saveCreds)
-			Qr_Code_By_Arslan_Tech.ev.on("connection.update", async (s) => {
+			Qr_Code_By_SHANII_Tech.ev.on('creds.update', saveCreds)
+			Qr_Code_By_SHANI_Tech.ev.on("connection.update", async (s) => {
 				const {
 					connection,
 					lastDisconnect,
@@ -56,41 +56,40 @@ router.get('/', async (req, res) => {
 					let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
 					await delay(800);
 				   let b64data = Buffer.from(data).toString('base64');
-				   let session = await Qr_Code_By_Arslan_Tech.sendMessage(Qr_Code_By_Arslan_Tech.user.id, { text: 'ARSLAN-MD~' + b64data });
+				   let session = await Qr_Code_By_SHANII_Tech.sendMessage(Qr_Code_By_SHANII_Tech.user.id, { text: 'SHANII-MD~' + b64data });
 	
-				   let Arslan_MD_TEXT = `
+				   let SHANI_MD_TEXT = `
 ╔════════════════════◇
 ║『 SESSION CONNECTED』
-║ ✨Arslan-MD🔷
-║ ✨ArslanMD OFFICIAL🔷
+║ ✨SHANI-MD🔷
+║ ✨SHANIIMD OFFICIAL🔷
 ╚════════════════════╝
 
 
 ---
 
 ╔════════════════════◇
-║『 YOU'VE CHOSEN Arslan-MD 』
+║『 YOU'VE CHOSEN Shanii-MD 』
 ║ -Set the session ID in Heroku:
 ║ - SESSION_ID: 
 ╚════════════════════╝
 ╔════════════════════◇
 ║ 『••• _V𝗶𝘀𝗶𝘁 𝗙𝗼𝗿_H𝗲𝗹𝗽 •••』
-║❍ 𝐘𝐨𝐮𝐭𝐮𝐛𝐞: youtube.com/@arslanmdofficial
-║❍ 𝐎𝐰𝐧𝐞𝐫: 923237045919
-║❍ 𝐑𝐞𝐩𝐨: https://github.com/Arslan-MD/Arslan_MD 
+║❍ 𝐎𝐰𝐧𝐞𝐫: 923197718156
+║❍ 𝐑𝐞𝐩𝐨: https://github.com/SHANI-MD/SHANI_MD 
 ║❍ 𝐖𝐚𝐆𝗿𝐨𝐮𝐩: https://chat.whatsapp.com/KRyARlvcUjoIv1CPSSyQA5?mode=wwt
 ║❍ 𝐖𝐚𝐂𝐡𝐚𝐧𝐧𝐞𝐥: https://whatsapp.com/channel/0029VarfjW04tRrmwfb8x306
-║❍ 𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦: _https://www.instagram.com/arslanmd
+║❍ 𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦: https://www.instagram.com/syedwrites.050?igsh=bm5zdWQxcXM0aHEz
 ║ ☬ ☬ ☬ ☬
 ╚═════════════════════╝
-𒂀 Enjoy Arslan-MD
+𒂀 Enjoy SHANII-MD
 
 
 ---
 
 Don't Forget To Give Star⭐ To My Repo
 ______________________________`;
-	 await Qr_Code_By_Arslan_Tech.sendMessage(Qr_Code_By_Arslan_Tech.user.id,{text:Arslan_MD_TEXT},{quoted:session})
+	 await Qr_Code_By_SHANII_Tech.sendMessage(Qr_Code_By_SHANII_Tech.user.id,{text:SHANI_MD_TEXT},{quoted:session})
 
 
 
@@ -99,7 +98,7 @@ ______________________________`;
 					return await removeFile("temp/" + id);
 				} else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
 					await delay(10000);
-					Arslan_MD_QR_CODE();
+					SHANII_MD_QR_CODE();
 				}
 			});
 		} catch (err) {
@@ -112,6 +111,7 @@ ______________________________`;
 			await removeFile("temp/" + id);
 		}
 	}
-	return await Arslan_MD_QR_CODE()
+	return await SHANII_MD_QR_CODE()
 });
 module.exports = router
+					

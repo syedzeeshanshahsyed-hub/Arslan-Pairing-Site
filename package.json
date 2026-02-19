@@ -1,12 +1,12 @@
 {
-  "name": "arslan-pairing-site",
+  "name": "Shanii-pairing-site",
   "version": "0.0.1",
-  "description": "A multi functional whatsapp bot Web paircode Created By ArslanMD Official.",
-  "main": "arslan.js",
+  "description": "A multi functional whatsapp bot Web paircode Created By shaniMD Official.",
+  "main": "shani.js",
   "scripts": {
-    "start": "pm2 start arslan.js --deep-monitoring --attach --name Arslan-MD",
-    "stop": "pm2 stop Arslan-MD",
-    "restart": "pm2 restart Arslan-MD"
+    "start": "pm2 start shani.js --deep-monitoring --attach --name shanii-MD",
+    "stop": "pm2 stop shanii-MD",
+    "restart": "pm2 restart shanii-MD"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "npm:wileys",              
